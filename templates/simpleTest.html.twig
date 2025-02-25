@@ -1,0 +1,19 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{variableTitre}} || {{parent()}}{% endblock %}
+
+{% block body %}
+<h1>My Super Simple Template!</h1>
+<p>The HTML I am seeing now is coming from a template file, and not from the controller!</p>
+
+<ul>
+{# Using a Twig loop to display my music list #}
+{% for song in songList %}
+
+    <li> {{song.title|upper}} - {{song.artist}} </li>
+
+{% endfor %}
+</ul>
+{% endblock %}
+
